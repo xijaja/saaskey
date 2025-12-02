@@ -1,0 +1,44 @@
+---
+title: "进阶排版：代码块、引用与表格"
+slug: "second-post"
+description: "展示代码块、引用、表格等进阶内容在博客中的呈现效果。"
+date: 2025-12-02
+published: true
+author: "Sherwin"
+cover: "/images/ai-image.png"
+tags: ["blog", "content-demo", "mdx"]
+---
+
+# 进阶排版：代码块、引用与表格
+
+这篇文章用于演示 **代码块、引用、表格** 等内容在博客中的展示效果。
+
+## 代码块示例
+
+```ts
+import { allBlogPosts } from "content-collections";
+
+export function getPublishedPosts() {
+  return allBlogPosts.filter((post) => post.published !== false);
+}
+```
+
+> 提示：代码块支持高亮，适合用来展示配置片段、API 示例等技术内容。
+
+## 表格示例
+
+| 功能           | 说明                                   |
+| -------------- | -------------------------------------- |
+| Markdown 支持  | 标准 Markdown + GFM                    |
+| MDX 组件       | 可以在文章中直接引入 React 组件       |
+| 阅读时间统计   | 自动根据字数计算 `readingTime` 字段   |
+
+## 任务列表（GFM）
+
+- [x] 支持基础 Markdown
+- [x] 支持 GFM（表格、任务列表等）
+- [ ] 接入更多自定义 MDX 组件
+
+## 小结
+
+通过这篇文章，你可以确认：**代码块、表格、引用等进阶排版元素已经可以在 SaasKey 博客中正常工作**。

@@ -1,0 +1,32 @@
+"use client";
+
+import type { ImageProps } from "next/image";
+import Zoom from "react-medium-image-zoom";
+import useMediaQuery from "@/hooks/use-media-query";
+import BlurImage from "./blur-image";
+
+import "react-medium-image-zoom/dist/styles.css";
+
+export default function ZoomImage(props: ImageProps & { blurDataURL?: string; hideCaption?: boolean }) {
+  const { width, height, isDesktop } = useMediaQuery();
+  return (
+    <figure className="not-prose flex flex-col items-center justify-center space-y-3">
+      <Zoom
+        zoomImg={{
+          src: props.src as string,
+          alt: props.alt,
+          ...(width && height ? { width, height } : {}),
+        }}
+        zoomMargin={isDesktop ? 45 : undefined}
+      >
+        <BlurImage
+          {...props}
+          blurDataURL={props.blurDataURL || "data:image/webp;base64,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="}
+          className="rounded-lg border border-gray-200"
+          placeholder="blur"
+        />
+      </Zoom>
+      {!props?.hideCaption && <figcaption className="text-center text-gray-500 text-sm italic">{props.alt}</figcaption>}
+    </figure>
+  );
+}
