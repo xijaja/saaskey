@@ -7,8 +7,8 @@ const localeText: Record<string, LocalizedText> = {
     en: "SaaSKey is a SaaS building template based on Nextjs 16",
   },
   title: {
-    zh: "这是您能够数小时内迅速构建 AI SaaS 的关键!",
-    en: "The key to your ability to quickly build AI SaaS in hours.",
+    zh: "快速构建 AI SaaS 的关键!",
+    en: "The key to building your AI SaaS in hours.",
   },
   subtitle_annotate: {
     zh: "SaaSKey 是 AI 原生的 SaaS 开发模板",

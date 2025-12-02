@@ -1,4 +1,4 @@
-# Saaskey.ai - The key to quickly building modern SaaS
+# Saaskey.ai - The key to building your AI SaaS in hours.
 
 <div align="center">
   <a href="https://saaskey.ai">
@@ -128,12 +128,10 @@ I've stripped away the overly complex logic and kept the core: **A beautiful UI,
 
 ## 🌟 Support
 
-If Saaskey saves you time or inspires you, please give it a 
+"If SaaSKey has saved you time or helped you in any way, please give it a **Star** 🌟. 
+Your support keeps me motivated!
 
-If SaaSKey has saved you time or proved useful, give it a **Star**! ⭐️ 
-Your support keeps the project moving. 
-You can also share it on social media or use it to build your own products. 
-Sharing the problems and ideas you encounter in real use will help improve the project.
+You can also support the project by sharing it on social media or showcasing the products you've built with it. Additionally, reporting issues or sharing ideas from your real-world experience will help make this project even better."
 
 ## 🗺️ Roadmap
 
