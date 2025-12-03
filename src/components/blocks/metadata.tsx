@@ -22,6 +22,13 @@ export function constructMetadata({
     keywords: SITE.keywords,
     authors: SITE.authors,
     creator: SITE.creator,
+    alternates: {
+      canonical: SITE.url,
+      languages: {
+        "en-US": `${SITE.url}/`,
+        "zh-CN": `${SITE.url}/zh`,
+      },
+    },
     openGraph: {
       title,
       description,
