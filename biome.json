@@ -9,13 +9,13 @@
     "ignoreUnknown": true,
     "includes": [
       "**",
-      "!*.css",
       "!node_modules",
       "!.next",
       "!dist",
       "!build",
       "!src/components/ui",
-      "!src/components/ai-elements"
+      "!src/components/ai-elements",
+      "!src/app/globals.css"
     ]
   },
   "formatter": {
