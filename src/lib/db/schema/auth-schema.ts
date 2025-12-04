@@ -1,10 +1,12 @@
 import { boolean, index, pgEnum, pgTable, text, timestamp } from "drizzle-orm/pg-core";
 
 // 角色枚举
+// role enum
 export const roles = pgEnum("roles", ["user", "admin", "super"]);
 
 /**
  * 用户表
+ * user table
  */
 export const users = pgTable("users", {
   id: text("id").primaryKey(),
@@ -23,6 +25,7 @@ export const users = pgTable("users", {
 
 /**
  * 会话表
+ * session table
  */
 export const sessions = pgTable(
   "sessions",
@@ -45,6 +48,7 @@ export const sessions = pgTable(
 
 /**
  * 账户表
+ * account table
  */
 export const accounts = pgTable(
   "accounts",
@@ -72,6 +76,7 @@ export const accounts = pgTable(
 
 /**
  * 验证表
+ * verification table
  */
 export const verifications = pgTable(
   "verifications",
@@ -90,6 +95,7 @@ export const verifications = pgTable(
 );
 
 // 导出类型
+// export types
 export type UserType = typeof users.$inferSelect;
 export type SessionType = typeof sessions.$inferSelect;
 export type AccountType = typeof accounts.$inferSelect;

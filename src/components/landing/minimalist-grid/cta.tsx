@@ -12,16 +12,16 @@ const localeText: Record<string, LocalizedText> = {
     en: "Join us",
   },
   subtitle: {
-    zh: "使用 SaaSKey 在数小时内发布你的 AI SaaS 产品",
-    en: "Use SaaSKey to launch your AI SaaS products in hours.",
+    zh: "在 GitHub 上获取 Saaskey.ai 源码，自托管你的下一款 AI SaaS",
+    en: "Get Saaskey.ai on GitHub and self-host your next AI SaaS.",
   },
   cta_primary: {
     zh: "立即开始",
     en: "Let's start",
   },
   cta_secondary: {
-    zh: "查看定价",
-    en: "View pricing",
+    zh: "前往 GitHub 获取源码",
+    en: "Go to GitHub repo",
   },
 };
 
@@ -72,7 +72,8 @@ export default async function CTA() {
             </Link>
             <Link
               className="inline-flex h-12 items-center justify-center rounded-lg border border-foreground/30 bg-background px-8 py-3 font-semibold text-foreground text-sm/6 hover:bg-muted/60"
-              href="/#pricing"
+              href="https://github.com/xijaja/saaskey"
+              target="_blank"
             >
               {getLocalizedText(localeText.cta_secondary, locale)}
             </Link>

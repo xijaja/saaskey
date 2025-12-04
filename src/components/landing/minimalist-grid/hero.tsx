@@ -19,12 +19,12 @@ const localeText: Record<string, LocalizedText> = {
     en: "SaaSKey has built-in point management, dialogue components, AIGC generation, and out-of-box AI capabilities",
   },
   cta_primary: {
-    zh: "获取终身访问权限",
-    en: "Get lifetime access",
+    zh: "立即开始",
+    en: "Let's start",
   },
   cta_secondary: {
-    zh: "阅读文档",
-    en: "Read documentation",
+    zh: "前往 GitHub 获取源码",
+    en: "Go to GitHub repo",
   },
 };
 
@@ -68,13 +68,14 @@ export default async function Hero() {
         <div className="flex gap-4 max-sm:px-4">
           <Link
             className="z-1 inline-block h-12 rounded-md bg-foreground px-8 py-3 font-semibold text-background text-sm/6 hover:bg-foreground/80"
-            href="#pricing"
+            href="/dashboard"
           >
             {getLocalizedText(localeText.cta_primary, locale)}
           </Link>
           <Link
             className="z-1 inline-block h-12 rounded-md border border-foreground/30 bg-background px-8 py-3 font-semibold text-foreground text-sm/6 transition-colors hover:border-foreground/50 hover:bg-muted/60"
-            href="/docs"
+            href="https://github.com/xijaja/saaskey"
+            target="_blank"
           >
             {getLocalizedText(localeText.cta_secondary, locale)}
           </Link>

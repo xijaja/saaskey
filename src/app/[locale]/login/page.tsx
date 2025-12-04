@@ -1,10 +1,25 @@
+import { headers } from "next/headers";
+import { getLocale } from "next-intl/server";
 import Logo from "@/components/blocks/logo";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
+import { DEFAULT_LOCALE, redirect } from "@/i18n/routing";
+import { auth } from "@/lib/auth/auth";
+import LoginForm from "./login-form";
 
-export default function LoginPage() {
+export default async function LoginPage() {
+  // 获取会话
+  // get session
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+  const locale = await getLocale();
+  // 如果会话存在，重定向到仪表盘
+  // if session exists, redirect to dashboard
+  const user = session?.user;
+  if (user) {
+    redirect({ href: "/dashboard", locale: locale || DEFAULT_LOCALE });
+  }
+
   return (
     <div className="flex min-h-screen items-center justify-center">
       <Card className="w-full max-w-sm rounded-4xl px-6 py-10 pt-14">
@@ -14,38 +29,15 @@ export default function LoginPage() {
 
             <div className="space-y-2 text-center">
               <h1 className="font-semibold text-3xl text-foreground">Welcome back!</h1>
-              <p className="text-muted-foreground text-sm">
+              {/* <p className="text-muted-foreground text-sm">
                 First time here?{" "}
                 <a className="text-foreground hover:underline" href="/signup">
                   Sign up for free
                 </a>
-              </p>
+              </p> */}
             </div>
 
-            <div className="w-full space-y-4">
-              <Input className="w-full rounded-xl" placeholder="Your email" type="email" />
-              <div className="flex flex-col gap-2">
-                <Button className="w-full rounded-xl" size="lg">
-                  Send me the magic link
-                </Button>
-                <Button className="w-full text-muted-foreground text-sm" variant="link">
-                  Sign in using password
-                </Button>
-              </div>
-
-              <div className="flex items-center gap-4 py-2">
-                <Separator className="flex-1" />
-                <span className="text-muted-foreground text-sm">OR</span>
-                <Separator className="flex-1" />
-              </div>
-
-              <Button className="w-full rounded-xl" size="lg" variant="outline">
-                Login with Google
-              </Button>
-              <Button className="w-full rounded-xl" size="lg" variant="outline">
-                Login with GitHub
-              </Button>
-            </div>
+            <LoginForm />
 
             <p className="w-11/12 text-center text-muted-foreground text-xs">
               You acknowledge that you read, and agree, to our{" "}
